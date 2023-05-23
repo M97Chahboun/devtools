@@ -15,6 +15,7 @@ import '../../shared/ui/tab.dart';
 import 'inspector_controller.dart';
 import 'inspector_screen.dart';
 import 'layout_explorer/layout_explorer.dart';
+import 'test_generator_tab.dart';
 
 class InspectorDetails extends StatelessWidget {
   const InspectorDetails({
@@ -39,6 +40,13 @@ class InspectorDetails extends StatelessWidget {
           trailing: InspectorExpandCollapseButtons(controller: controller),
         ),
         tabView: detailsTree,
+      ),
+      (
+        tab: _buildTab(
+          tabName: 'Test Generator',
+          trailing: InspectorExpandCollapseButtons(controller: controller),
+        ),
+        tabView: TestGenerator(controller: controller),
       ),
     ];
 
